@@ -24,5 +24,14 @@
     "prettier/prettier": 0,
     "jsx-a11y/no-autofocus": 1,
     "@typescript-eslint/no-explicit-any": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
   }
 }
