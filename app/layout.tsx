@@ -2,13 +2,14 @@ import './globals.css';
 import styles from './layout.module.css';
 import { Metadata } from 'next';
 import React from 'react';
+import AuthProvider from '../components/AuthProvider';
 
 export const metadata: Metadata = {
     title: 'NEXT13 app',
     description: 'Experimental NEXT13 app',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: {
     children: React.ReactNode;
@@ -17,8 +18,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={styles.layout}>
-                Root Layout
-                <main>{children}</main>
+                <main>
+                    <AuthProvider>{children}</AuthProvider>
+                </main>
             </body>
         </html>
     );

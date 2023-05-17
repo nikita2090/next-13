@@ -1,10 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-//import Button from '@/components/Button';
 const Button = dynamic(() => import('../../components/Button'), { ssr: false });
 
 interface PostsChildProps {

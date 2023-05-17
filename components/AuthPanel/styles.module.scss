@@ -1,0 +1,48 @@
+.root {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: purple;
+}
+
+.panel {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-weight: 500;
+}
+
+.signInControls {
+    display: flex;
+    align-items: center;
+
+    & button {
+        border: none;
+        box-shadow: none;
+        padding: 10px 20px;
+        margin-right: 25px;
+        border-radius: 5px;
+        color: black;
+        font-weight: bold;
+        background: white;
+
+        &:hover {
+            background: beige;
+            cursor: pointer;
+        }
+    }
+}
+
+.avatar {
+    border-radius: 100%;
+}
