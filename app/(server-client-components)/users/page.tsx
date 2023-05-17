@@ -1,42 +1,17 @@
 import { UsersChild } from '@/components/UsersChild';
 import { UserInfo } from '@/components/UsersInfo';
 
-import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+//import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import axios from 'axios';
 
-//export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
-// interface PostsInfoProps {
-//     searchParams: string;
-// }
-//
-// interface Post {
-//     id: 1;
-//     title: string;
-//     body: string;
-//     userId: number;
-//     tags: string[];
-// }
-//
-// interface Posts {
-//     posts: Post[];
-// }
-
-// async function getPosts(): Promise<Posts> {
-//     const res = await fetch('https://dummyjson.com/posts', {
-//         cache: 'no-store',
-//     });
-//
-//     if (!res.ok) {
-//         // This will activate the closest `error.js` Error Boundary
-//         throw new Error('Failed to fetch data');
-//     }
-//     return res.json();
-// }
+export const dynamic = 'force-dynamic';
 
 export default async function Users() {
-    const data = await getRandomUser({ cache: 'no-store' });
+    //const data = await getRandomUser({ cache: 'no-store' });
     console.log('render Users');
+
+    const res = await axios.get('https://randomuser.me/api/?inc=name');
+    console.log(res.data);
 
     return (
         <div>
@@ -45,7 +20,7 @@ export default async function Users() {
                 Dynamic Route: Server Component - ClientComponent -
                 ServerComponent
             </p>
-            {data.results[0].name.first}
+            {res.data.results[0].name.first}
             <br />
             <p>{new Date().toLocaleString('ru')}</p>
             <br />

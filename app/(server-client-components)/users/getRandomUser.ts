@@ -1,15 +1,5 @@
-interface Args {
-    cache?: RequestCache | undefined;
-    revalidate?: number | false | undefined;
-}
-
-export async function getRandomUser(args: Args) {
-    const res = await fetch('https://randomuser.me/api/?inc=name', {
-        cache: args?.cache,
-        next: {
-            revalidate: args?.revalidate,
-        },
-    });
+export async function getRandomUser(options?: RequestInit) {
+    const res = await fetch('https://randomuser.me/api/?inc=name', options);
 
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary

@@ -2,9 +2,6 @@ import { getRandomUser } from '@/app/(server-client-components)/users/getRandomU
 import { Suspense } from 'react';
 import { headers } from 'next/headers';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
 interface ProductProps {
     params: {
         product: number;
@@ -12,7 +9,7 @@ interface ProductProps {
 }
 
 const UserName = async () => {
-    const data = await getRandomUser({ cache: 'no-store', revalidate: 0 });
+    const data = await getRandomUser({ cache: 'no-store' });
     const headersList = headers();
     const referer = headersList.get('referer');
 

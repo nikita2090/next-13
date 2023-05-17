@@ -17,10 +17,6 @@ export default function Home() {
                 Discounts (Statically generated dynamic segments)
             </Link>
 
-            <Link href={'/login'}>
-                Login Modal (Parallel routing with modal)
-            </Link>
-
             <br />
             <Link href={'/clients'}>Clients (Local error boundary)</Link>
             <Link href={'/dashboard'}>Dashboard (Parallel routing)</Link>
@@ -34,7 +30,7 @@ export default function Home() {
             </Link>
 
             <Link href={'/users'}>
-                Posts (Dynamic route with Server - Client - Server components
+                Users (Dynamic route with Server - Client - Server components
                 structure)
             </Link>
         </div>

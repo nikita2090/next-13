@@ -20,6 +20,18 @@ export default async function Discount({ params }: DiscountProps) {
         <div>
             <h2>Product #{params.discount}</h2>
             <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+            <p>Page with statically generated dynamic segment</p>
+
             {currentDiscount?.name}
         </div>
     );

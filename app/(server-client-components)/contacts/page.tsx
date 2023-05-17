@@ -3,7 +3,7 @@ import { ContactsInfo } from '@/components/ContactsInfo';
 import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
 
 export default async function Contacts() {
-    const data = await getRandomUser({ revalidate: 5 });
+    const data = await getRandomUser({ next: { revalidate: 5 } });
     console.log('render');
     return (
         <div>
