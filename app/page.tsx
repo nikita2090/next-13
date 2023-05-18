@@ -1,8 +1,8 @@
-import styles from './page.module.css';
-import Link from 'next/link';
-import AuthPanel from '../components/AuthPanel';
-import { getServerSession } from 'next-auth';
 import React from 'react';
+import Link from 'next/link';
+import { getServerSession } from 'next-auth';
+
+import styles from './page.module.css';
 
 export default async function Home() {
     const session = await getServerSession();
@@ -10,7 +10,6 @@ export default async function Home() {
 
     return (
         <div className={styles.main}>
-            <AuthPanel />
             <h1>NEXT-13 TEST APP</h1>
             <br />
 

@@ -1,0 +1,76 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 20px 0;
+        background-color: grey;
+    }
+}
+
+.field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: none;
+    margin-bottom: 10px;
+
+    &:focus {
+        outline: 1px solid purple;
+    }
+}
+
+.button {
+    border: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    background: purple;
+    width: 100%;
+    border-radius: 5px;
+
+    &:hover {
+        background: #620062;
+        cursor: pointer;
+    }
+}
+
+.oauth {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.oauthButton {
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #eeecec;
+    }
+
+    & img {
+        margin-right: 5px;
+    }
+}

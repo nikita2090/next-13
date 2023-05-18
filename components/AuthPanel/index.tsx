@@ -10,9 +10,6 @@ export default function AuthPanel() {
     const isAuthorized = Boolean(session?.user);
     const avatarPath = session?.user?.image as string;
 
-    console.log(session?.user);
-    console.log('render');
-    // @ts-ignore
     return (
         <div className={styles.root}>
             <div className={styles.panel}>
@@ -38,17 +35,10 @@ export default function AuthPanel() {
                     <div className={styles.signInControls}>
                         <button
                             onClick={() => {
-                                void signIn('github');
+                                void signIn();
                             }}
                         >
-                            Sign in with GitHub
-                        </button>
-                        <button
-                            onClick={() => {
-                                void signIn('google');
-                            }}
-                        >
-                            Sign in with Google
+                            Sign in
                         </button>
                     </div>
                 )}

@@ -3,6 +3,7 @@ import styles from './layout.module.css';
 import { Metadata } from 'next';
 import React from 'react';
 import AuthProvider from '../components/AuthProvider';
+import AuthPanel from '@/components/AuthPanel';
 
 export const metadata: Metadata = {
     title: 'NEXT13 app',
@@ -19,7 +20,10 @@ export default async function RootLayout({
         <html lang="en">
             <body className={styles.layout}>
                 <main>
-                    <AuthProvider>{children}</AuthProvider>
+                    <AuthProvider>
+                        <AuthPanel />
+                        <div className={styles.content}>{children}</div>
+                    </AuthProvider>
                 </main>
             </body>
         </html>
