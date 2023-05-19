@@ -8,6 +8,8 @@ import googleImg from '../../public/google.svg';
 
 import styles from './styles.module.scss';
 import Image from 'next/image';
+import { Field } from '@/components/Field';
+import { Button } from '@/components/Button';
 
 interface AuthFormProps {
     authProviders: {
@@ -41,8 +43,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ authProviders }) => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(login);
-        console.log(password);
+
         await signIn('credentials', {
             login,
             password,
@@ -54,14 +55,15 @@ export const AuthForm: React.FC<AuthFormProps> = ({ authProviders }) => {
     return (
         <div className={styles.root}>
             <form onSubmit={handleSubmit} className={styles.form}>
-                <input
+                <Field
                     name={'login'}
                     value={login}
                     onChange={handleLoginChange}
                     placeholder={'Login'}
                     className={styles.field}
                 />
-                <input
+
+                <Field
                     name={'password'}
                     type={'password'}
                     value={password}
@@ -69,9 +71,8 @@ export const AuthForm: React.FC<AuthFormProps> = ({ authProviders }) => {
                     placeholder={'Password'}
                     className={styles.field}
                 />
-                <button type={'submit'} className={styles.button}>
-                    Send
-                </button>
+
+                <Button type={'submit'}>Send</Button>
             </form>
 
             <div className={styles.oauth}>

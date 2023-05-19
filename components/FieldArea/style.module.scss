@@ -1,0 +1,15 @@
+.root {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: none;
+    margin-bottom: 10px;
+    resize: none;
+    font-size: 14px;
+    font-family: sans-serif;
+
+    &:focus {
+        outline: 1px solid purple;
+    }
+}

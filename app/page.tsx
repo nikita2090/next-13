@@ -46,6 +46,13 @@ export default async function Home() {
                         Users (Dynamic route with Server - Client - Server
                         components structure)
                     </Link>
+                    <br />
+                    <br />
+
+                    <h2>Next API</h2>
+                    <Link href={'/posts'}>
+                        Posts (Client side fetch to next API)
+                    </Link>
                 </>
             ) : (
                 <>

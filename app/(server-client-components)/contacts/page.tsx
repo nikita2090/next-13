@@ -4,7 +4,7 @@ import { getRandomUser } from '@/app/(server-client-components)/users/getRandomU
 
 export default async function Contacts() {
     const data = await getRandomUser({ next: { revalidate: 5 } });
-    console.log('render');
+
     return (
         <div>
             <h2>Contacts (Server Component)</h2>

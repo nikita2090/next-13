@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import React from 'react';
 import AuthProvider from '../components/AuthProvider';
 import AuthPanel from '@/components/AuthPanel';
+import { QueryProvider } from '@/components/QueryProvider';
 
 export const metadata: Metadata = {
     title: 'NEXT13 app',
@@ -20,10 +21,12 @@ export default async function RootLayout({
         <html lang="en">
             <body className={styles.layout}>
                 <main>
-                    <AuthProvider>
-                        <AuthPanel />
-                        <div className={styles.content}>{children}</div>
-                    </AuthProvider>
+                    <QueryProvider>
+                        <AuthProvider>
+                            <AuthPanel />
+                            <div className={styles.content}>{children}</div>
+                        </AuthProvider>
+                    </QueryProvider>
                 </main>
             </body>
         </html>

@@ -8,7 +8,7 @@ export default async function SignIn() {
     const OAuthProviders = Object.values(providers).filter(
         (provider) => provider.id !== 'credentials'
     );
-    console.log('providers', OAuthProviders);
+
     return (
         <div className={styles.root}>
             <h2 className={styles.title}>Sign In</h2>

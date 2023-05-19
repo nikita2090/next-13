@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
+import cn from 'classnames';
 
-const Button = ({ children }: { children: React.ReactNode }) => {
-    return <button>{children}</button>;
+import styles from './styles.module.scss';
+
+export const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
+    children,
+    className,
+    ...rest
+}) => {
+    return (
+        <button {...rest} className={cn(styles.root, className)}>
+            {children}
+        </button>
+    );
 };
-
-export default Button;

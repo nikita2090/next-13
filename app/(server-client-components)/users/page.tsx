@@ -8,10 +8,8 @@ export const dynamic = 'force-dynamic';
 
 export default async function Users() {
     //const data = await getRandomUser({ cache: 'no-store' });
-    console.log('render Users');
 
     const res = await axios.get('https://randomuser.me/api/?inc=name');
-    console.log(res.data);
 
     return (
         <div>

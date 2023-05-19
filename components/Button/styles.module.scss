@@ -1,0 +1,14 @@
+.root {
+    border: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    background: purple;
+    border-radius: 5px;
+
+    &:hover {
+        background: #620062;
+        cursor: pointer;
+    }
+}

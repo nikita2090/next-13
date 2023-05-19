@@ -22,32 +22,7 @@
 }
 
 .field {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid grey;
-    box-shadow: none;
     margin-bottom: 10px;
-
-    &:focus {
-        outline: 1px solid purple;
-    }
-}
-
-.button {
-    border: none;
-    box-shadow: none;
-    padding: 10px 20px;
-    color: white;
-    font-weight: bold;
-    background: purple;
-    width: 100%;
-    border-radius: 5px;
-
-    &:hover {
-        background: #620062;
-        cursor: pointer;
-    }
 }
 
 .oauth {
