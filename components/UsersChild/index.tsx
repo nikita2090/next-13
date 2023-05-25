@@ -1,9 +1,7 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-const Button = dynamic(() => import('../../components/Button'), { ssr: false });
 
 interface PostsChildProps {
     children: React.ReactNode;
@@ -27,8 +25,6 @@ export const UsersChild: React.FC<PostsChildProps> = ({ children }) => {
             <br />
             <br />
             {children}
-            <br />
-            <Button>Wow</Button>
         </section>
     );
 };

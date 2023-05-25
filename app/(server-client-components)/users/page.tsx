@@ -1,15 +1,27 @@
 import { UsersChild } from '@/components/UsersChild';
 import { UserInfo } from '@/components/UsersInfo';
 
-//import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
-import axios from 'axios';
+import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
 
-export const dynamic = 'force-dynamic';
+// #route segment config
+// import axios from 'axios';
+
+// #route segment config
+// export const dynamic = 'force-dynamic';
 
 export default async function Users() {
-    //const data = await getRandomUser({ cache: 'no-store' });
+    // #ssr
+    const data = await getRandomUser({ cache: 'no-store' });
 
-    const res = await axios.get('https://randomuser.me/api/?inc=name');
+    // #isr
+    // const data = await getRandomUser({
+    //     next: {
+    //         revalidate: 3,
+    //     },
+    // });
+
+    // #route segment config
+    //const res = await axios.get('https://randomuser.me/api/?inc=name');
 
     return (
         <div>
@@ -18,11 +30,15 @@ export default async function Users() {
                 Dynamic Route: Server Component - ClientComponent -
                 ServerComponent
             </p>
-            {res.data.results[0].name.first}
+            {data.results[0].name.first}
+
+            {/* #route segment config */}
+            {/*{res.data.results[0].name.first}*/}
             <br />
             <p>{new Date().toLocaleString('ru')}</p>
             <br />
             <UsersChild>
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                 {/* @ts-ignore */}
                 <UserInfo />
             </UsersChild>

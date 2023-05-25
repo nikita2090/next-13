@@ -72,7 +72,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ authProviders }) => {
                     className={styles.field}
                 />
 
-                <Button type={'submit'}>Send</Button>
+                <Button className={styles.sendBtn}>Send</Button>
             </form>
 
             <div className={styles.oauth}>
@@ -86,7 +86,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ authProviders }) => {
                     >
                         {buttonImgs[provider.id] && (
                             <Image
-                                src={buttonImgs[provider!.id]}
+                                src={buttonImgs[provider?.id]}
                                 alt={provider.name}
                                 width={15}
                                 height={15}

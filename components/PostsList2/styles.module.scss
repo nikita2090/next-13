@@ -1,0 +1,29 @@
+.root {
+    width: 50%;
+}
+
+.article {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid purple;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.deleteButton {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: mediumvioletred;
+
+    &:hover {
+        background-color: #a91071;
+    }
+}

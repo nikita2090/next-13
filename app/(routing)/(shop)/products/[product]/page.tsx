@@ -26,6 +26,7 @@ export default async function Product({ params }: ProductProps) {
             <h2>Product #{params.product}</h2>
             <p>Page with dynamic segment</p>
             <Suspense fallback={<div>Loading name...</div>}>
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                 {/* @ts-ignore */}
                 <UserName />
             </Suspense>

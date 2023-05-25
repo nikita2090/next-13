@@ -4,6 +4,7 @@ import { getProviders } from 'next-auth/react';
 
 export default async function SignIn() {
     const providers = await getProviders();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const OAuthProviders = Object.values(providers).filter(
         (provider) => provider.id !== 'credentials'

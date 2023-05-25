@@ -51,7 +51,11 @@ export default async function Home() {
 
                     <h2>Next API</h2>
                     <Link href={'/posts'}>
-                        Posts (Client side fetch to next API)
+                        Posts (Client side fetches to Next API)
+                    </Link>
+                    <br />
+                    <Link href={'/posts2'}>
+                        Posts-2 (Revalidation with Next api)
                     </Link>
                 </>
             ) : (
