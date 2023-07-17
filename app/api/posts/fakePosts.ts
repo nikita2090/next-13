@@ -4,7 +4,7 @@ export interface Post {
     text: string;
 }
 
-export let initialPosts: Post[] = [
+export const initialPosts: Post[] = [
     {
         id: 1,
         name: 'React',
