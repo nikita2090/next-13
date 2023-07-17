@@ -15,7 +15,6 @@ export const UsersChild: React.FC<PostsChildProps> = ({ children }) => {
         setCount((c) => c + 1);
         router.refresh();
     };
-    console.log('render UsersChild');
 
     return (
         <section>

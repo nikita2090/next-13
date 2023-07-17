@@ -4,7 +4,7 @@ import React from 'react';
 export async function UserInfo() {
     const date = new Date().toLocaleString('ru');
     // const data = await getRandomUser();
-    console.log('render UserInfo');
+    // console.log('render UserInfo');
     return (
         <>
             <h4>User Info (Server Component)</h4>

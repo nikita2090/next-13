@@ -10,7 +10,6 @@ export async function POST(req: Request) {
         }
 
         const body = await req.json();
-        console.log(body);
 
         if (body) {
             const newId = postsStore.posts[postsStore.posts.length - 1].id + 1;

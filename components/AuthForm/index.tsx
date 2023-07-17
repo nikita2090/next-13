@@ -28,8 +28,6 @@ const buttonImgs: {
     google: googleImg,
 };
 
-console.log(buttonImgs);
-
 export const AuthForm: React.FC<AuthFormProps> = ({ authProviders }) => {
     const [login, setLogin] = useState('');
     const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {

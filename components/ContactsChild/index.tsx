@@ -14,7 +14,7 @@ export const ContactsChild: React.FC<ContactsChildProps> = ({ children }) => {
     };
 
     const date = new Date().toLocaleString('ru');
-    console.log('render');
+    // console.log('render');
     return (
         <section>
             <h3>Contacts Child (Client component)</h3>
