@@ -4,6 +4,7 @@ import { signIn, useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 
 import styles from './styles.module.scss';
+import Image from 'next/image';
 
 export default function AuthPanel() {
     const { data: session } = useSession();
@@ -23,7 +24,7 @@ export default function AuthPanel() {
                         >
                             Sign out
                         </button>
-                        <img
+                        <Image
                             src={avatarPath}
                             alt={'avatar'}
                             width={50}
