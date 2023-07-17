@@ -3,7 +3,7 @@ import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-export const handler = NextAuth({
+const handler = NextAuth({
     providers: [
         CredentialsProvider({
             name: 'Credentials',
@@ -18,7 +18,7 @@ export const handler = NextAuth({
                 const user = {
                     email: 'some@email.com',
                     name: 'Nikita Test',
-                    id: 1,
+                    id: '1',
                 };
 
                 // If no error and we have user data, return it
