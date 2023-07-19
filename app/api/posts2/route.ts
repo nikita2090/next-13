@@ -7,7 +7,7 @@ import { NextResponse } from 'next/server';
 
 export const revalidate = 0;
 
-export async function GET(Request: NextRequest) {
+export async function GET() {
     try {
         //const session = await getServerSession();
         //console.log('session', session);
@@ -24,6 +24,7 @@ export async function GET(Request: NextRequest) {
         //return new Response(JSON.stringify(postsStore.posts));
         return NextResponse.json(obj);
     } catch (error) {
+        console.log(error);
         return new Response(null, { status: 500 });
         //return new NextResponse(null, { status: 500 });
     }

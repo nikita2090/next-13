@@ -12,7 +12,8 @@ export async function POST(req: Request) {
         const body = await req.json();
 
         if (body) {
-            const newId = postsStore.posts[postsStore.posts.length - 1].id + 1;
+            const newId =
+                postsStore.posts[postsStore.posts.length - 1]?.id + 1 || 0;
             const newPost = {
                 id: newId,
                 ...body,
@@ -25,6 +26,7 @@ export async function POST(req: Request) {
 
         return new Response(JSON.stringify(postsStore.posts));
     } catch (error) {
+        console.log(error);
         return new Response(null, { status: 500 });
     }
 }

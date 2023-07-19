@@ -19,6 +19,10 @@ export async function getPosts(): Promise<PostsResponse> {
         // },
     });
 
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+
     return res.json();
 }
 

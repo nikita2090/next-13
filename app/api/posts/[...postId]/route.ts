@@ -25,6 +25,7 @@ export async function DELETE(req: Request, { params }: { params: Params }) {
 
         return new Response(JSON.stringify(postsStore.posts));
     } catch (error) {
+        console.log(error);
         return new Response(null, { status: 500 });
     }
 }
