@@ -1,9 +1,9 @@
-import NextAuth from 'next-auth';
+import NextAuth, { AuthOptions } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
     providers: [
         CredentialsProvider({
             name: 'Credentials',
@@ -55,6 +55,8 @@ const handler = NextAuth({
     pages: {
         signIn: '/signin',
     },
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

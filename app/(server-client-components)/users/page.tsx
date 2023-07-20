@@ -2,6 +2,7 @@ import { UsersChild } from '@/components/UsersChild';
 import { UserInfo } from '@/components/UsersInfo';
 
 import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import { withServerAuth } from '@/utils/withServerAuth';
 
 // #route segment config
 // import axios from 'axios';
@@ -9,7 +10,7 @@ import { getRandomUser } from '@/app/(server-client-components)/users/getRandomU
 // #route segment config
 // export const dynamic = 'force-dynamic';
 
-export default async function Users() {
+async function Users() {
     // #ssr
     const data = await getRandomUser({ cache: 'no-store' });
 
@@ -47,3 +48,5 @@ export default async function Users() {
         </div>
     );
 }
+
+export default withServerAuth(Users);

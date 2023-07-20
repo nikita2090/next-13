@@ -1,8 +1,9 @@
 import { ContactsChild } from '@/components/ContactsChild';
 import { ContactsInfo } from '@/components/ContactsInfo';
 import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import { withServerAuth } from '@/utils/withServerAuth';
 
-export default async function Contacts() {
+async function Contacts() {
     const data = await getRandomUser({ next: { revalidate: 5 } });
 
     return (
@@ -23,3 +24,5 @@ export default async function Contacts() {
         </div>
     );
 }
+
+export default withServerAuth(Contacts);

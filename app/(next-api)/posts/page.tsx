@@ -2,8 +2,9 @@ import { PostsList } from '@/components/PostsList';
 import { NewPost } from '@/components/NewPost';
 
 import styles from './styles.module.scss';
+import { withServerAuth } from '@/utils/withServerAuth';
 
-export default function Posts() {
+function Posts() {
     return (
         <section>
             <h3 className={styles.title}>New post:</h3>
@@ -14,3 +15,5 @@ export default function Posts() {
         </section>
     );
 }
+
+export default withServerAuth(Posts);
