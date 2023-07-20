@@ -57,10 +57,7 @@ export default async function Home() {
                 </>
             ) : (
                 <>
-                    <p>
-                        This is a test app. Part of routes are available only
-                        after logging in
-                    </p>
+                    <i>Part of routes are available only after logging in</i>
                 </>
             )}
         </div>
