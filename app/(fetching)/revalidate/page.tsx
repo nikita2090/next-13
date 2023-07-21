@@ -19,6 +19,7 @@ export default async function Revalidate() {
             <a
                 href="https://nextjs.org/docs/app/building-your-application/data-fetching/revalidating#how-it-works"
                 style={{ textDecoration: 'underline' }}
+                target="_blank"
             >
                 How it works in documentation
             </a>

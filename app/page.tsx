@@ -61,6 +61,7 @@ export default async function Home() {
                             href={
                                 'https://github.com/vercel/next.js/issues/42991#issuecomment-1566339183'
                             }
+                            target="_blank"
                             style={{ textDecoration: 'underline' }}
                         >
                             Why?
