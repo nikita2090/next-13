@@ -3,6 +3,9 @@ import { NextRequest, NextResponse } from 'next/server';
 const allowedOrigins = ['http://localhost:3000'];
 
 const findOriginFromReferer = (referer: string) => {
+    if (!referer) {
+        return '';
+    }
     const arr = referer?.split('/');
     return `${arr[0]}//${arr[2]}`;
 };
@@ -30,7 +33,7 @@ async function middleware(request: NextRequest) {
 
         addCORSHeaders(response, origin);
 
-        if (origin && !allowedOrigins.includes(origin)) {
+        if (origin && !allowedOrigins.includes(origin) || !origin) {
             return new NextResponse(null, {
                 status: 400,
                 statusText: 'Bad request',
