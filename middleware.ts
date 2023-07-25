@@ -33,7 +33,7 @@ async function middleware(request: NextRequest) {
 
         addCORSHeaders(response, origin);
 
-        if (origin && !allowedOrigins.includes(origin) || !origin) {
+        if (origin && !allowedOrigins.includes(origin)) {
             return new NextResponse(null, {
                 status: 400,
                 statusText: 'Bad request',

@@ -1,7 +1,7 @@
 import { NewPost } from '@/components/NewPost';
 
 import styles from './styles.module.scss';
-import PostsList2 from '@/components/PostsList2';
+// import PostsList2 from '@/components/PostsList2';
 
 export default function Posts2() {
     return (
@@ -14,7 +14,7 @@ export default function Posts2() {
             <h3 className={styles.title}>Posts</h3>
             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
             {/*@ts-ignore*/}
-            <PostsList2 />
+            {/* <PostsList2 /> */}
         </section>
     );
 }
