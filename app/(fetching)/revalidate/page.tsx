@@ -11,7 +11,7 @@ export default async function Revalidate() {
             <h2>Incremental Static Regeneration(ISG)</h2>
             <br />
             <p>
-                Fetches and cashes data for some time. After this time and
+                Fetches and caches data for some time. After this time and
                 refreshing page next initializes revalidation. And only after
                 second refresh you can see a new data.
             </p>

@@ -36,18 +36,17 @@ export default async function Home() {
                     <br />
                     <h3>With fetch</h3>
                     <p>
-                        Fetch options like &quot;cashe&quot; and
+                        Fetch options like &quot;cache&quot; and
                         &quot;revalidate&quot; give you ability to manage only{' '}
-                        <b>server</b> cashe.
+                        <b>server</b> cache.
                     </p>
                     <br />
-                    <Link href={'/force-cashe'}>Force cash (Static)</Link>
-                    <Link href={'/revalidate'} prefetch={false}>
-                        Revalidation (ISG)
+                    <Link href={'/force-cache'}>Force cache (Static)</Link>
+                    <Link href={'/revalidate'}>Revalidation (ISG)</Link>
+                    <Link href={'/revalidate-on-demand'}>
+                        Revalidation on demand (with path)
                     </Link>
-                    <Link href={'/no-store'} prefetch={false}>
-                        No store, Dynamic (SSR)
-                    </Link>
+                    <Link href={'/no-store'}>No store, Dynamic (SSR)</Link>
                     <Link href={'/dynamic-mount'}>
                         Client side fetch on mount (CSR)
                     </Link>
@@ -55,7 +54,7 @@ export default async function Home() {
                     <br />
                     <p style={{ width: '50%' }}>
                         Link prop &quot;prefetch&quot; gives you ability to
-                        manage a client cashe. Prefetch=false wipes client cashe
+                        manage a client cache. Prefetch=false wipes client cache
                         after about 30 sec.{' '}
                         <a
                             href={
@@ -65,13 +64,20 @@ export default async function Home() {
                             style={{ textDecoration: 'underline' }}
                         >
                             Why?
-                        </a>
+                        </a>{' '}
                         Every time you click on a link during those 30 seconds,
                         the countdown resets back to 30
                     </p>
                     <br />
 
+                    <Link href={'/no-store'} prefetch={false}>
+                        No store, Dynamic without prefetch (SSR)
+                    </Link>
+                    <br />
+
                     <h3>With React Query and axios (using dynamic segments)</h3>
+                    <br />
+                    <Link href={'/segment-revalidate'}>Revalidation (ISG)</Link>
 
                     <h2>Server & Client components</h2>
                     <Link href={'/contacts'}>
