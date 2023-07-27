@@ -1,4 +1,4 @@
-import { request } from '@/fetching/request';
+import { request } from '@/fetching/client/request';
 import { cache } from 'react';
 
 interface Result {

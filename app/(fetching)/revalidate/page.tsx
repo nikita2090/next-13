@@ -1,4 +1,4 @@
-import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import { getRandomUser } from '@/fetching/server/getRandomUser';
 
 export default async function Revalidate() {
     const data = await getRandomUser({

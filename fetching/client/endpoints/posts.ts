@@ -1,4 +1,4 @@
-import { request } from '@/fetching/request';
+import { request } from '@/fetching/client/request';
 import { Post } from '@/app/api/posts/fakePosts';
 
 export const getPosts = async (): Promise<Post[]> => {

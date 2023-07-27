@@ -1,6 +1,6 @@
 import { ContactsChild } from '@/components/ContactsChild';
 import { ContactsInfo } from '@/components/ContactsInfo';
-import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import { getRandomUser } from '@/fetching/server/getRandomUser';
 import { withServerAuth } from '@/utils/withServerAuth';
 
 async function Contacts() {

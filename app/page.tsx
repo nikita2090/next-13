@@ -42,10 +42,15 @@ export default async function Home() {
                     </p>
                     <br />
                     <Link href={'/force-cache'}>Force cache (Static)</Link>
+                    <br />
                     <Link href={'/revalidate'}>Revalidation (ISG)</Link>
                     <Link href={'/revalidate-on-demand'}>
-                        Revalidation on demand (with path)
+                        Revalidation on demand (by path)
                     </Link>
+                    <Link href={'/revalidate-by-tag'}>
+                        Revalidation on demand (by tag)
+                    </Link>
+                    <br />
                     <Link href={'/no-store'}>No store, Dynamic (SSR)</Link>
                     <Link href={'/dynamic-mount'}>
                         Client side fetch on mount (CSR)
@@ -78,6 +83,8 @@ export default async function Home() {
                     <h3>With React Query and axios (using dynamic segments)</h3>
                     <br />
                     <Link href={'/segment-revalidate'}>Revalidation (ISG)</Link>
+                    <br />
+                    <br />
 
                     <h2>Server & Client components</h2>
                     <Link href={'/contacts'}>

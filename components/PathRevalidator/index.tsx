@@ -3,16 +3,16 @@
 import React from 'react';
 
 interface Props {
-    path: string;
+    queryPath: string;
 }
 
-export default function Revalidator({ path }: Props) {
+export default function PathRevalidator({ queryPath }: Props) {
     const API_KEY = 'super-secure-api-key';
     console.log(API_KEY);
 
     const handleClick = () => {
         fetch(
-            `http://localhost:3000/api/revalidate?key=${API_KEY}&path=${path}`
+            `http://localhost:3000/api/revalidate?key=${API_KEY}&path=${queryPath}`
         );
     };
     return <button onClick={handleClick}>Revalidate</button>;
