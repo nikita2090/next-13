@@ -6,9 +6,28 @@ import AuthProvider from '../components/AuthProvider';
 import AuthPanel from '@/components/AuthPanel';
 import { QueryProvider } from '@/components/QueryProvider';
 
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ['latin'] });
+const euclid = localFont({
+    src: [
+        {
+            path: '../public/fonts/EuclidCircularA-Regular.otf',
+            weight: '400',
+            style: 'normal',
+        },
+
+        {
+            path: '../public/fonts/EuclidCircularA-Medium.otf',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: '../public/fonts/EuclidCircularA-Bold.otf',
+            weight: '600',
+            style: 'normal',
+        },
+    ],
+});
 
 export const metadata: Metadata = {
     title: 'NEXT13 app',
@@ -24,7 +43,7 @@ export default async function RootLayout({
     return (
         <html lang="en">
             <body className={styles.layout}>
-                <main className={inter.className}>
+                <main className={euclid.className}>
                     <QueryProvider>
                         <AuthProvider>
                             <AuthPanel />
