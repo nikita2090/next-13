@@ -3,7 +3,7 @@
 import styles from './styles.module.scss';
 import React, { useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
-import { addPost } from '@/fetching/endpoints/posts';
+import { addPost } from '@/fetching/client/endpoints/posts';
 import { Field } from '@/components/Field';
 import { Button } from '@/components/Button';
 import { FieldArea } from '@/components/FieldArea';

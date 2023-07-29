@@ -3,7 +3,7 @@
 import { Button } from '@/components/Button';
 
 import { useMutation, useQueryClient } from 'react-query';
-import { deletePost } from '@/fetching/endpoints/posts';
+import { deletePost } from '@/fetching/client/endpoints/posts';
 import React from 'react';
 
 interface Posts2DeleteButtonProps {

@@ -1,4 +1,4 @@
-import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import { getRandomUser } from '@/fetching/server/getRandomUser';
 import { Suspense } from 'react';
 import { headers } from 'next/headers';
 

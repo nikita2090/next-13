@@ -1,6 +1,6 @@
 //import { getServerSession } from 'next-auth';
 import { postsStore } from '@/app/api/posts/fakePosts';
-import { NextRequest } from 'next/server';
+//import { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 //export const dynamic = 'force-dynamic';

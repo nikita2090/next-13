@@ -1,6 +1,6 @@
 'use client';
 
-import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import { getRandomUser } from '@/fetching/server/getRandomUser';
 import { useEffect, useState } from 'react';
 
 export default function DynamicMountChild() {

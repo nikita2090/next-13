@@ -1,7 +1,7 @@
 import { UsersChild } from '@/components/UsersChild';
 import { UserInfo } from '@/components/UsersInfo';
 
-import { getRandomUser } from '@/app/(server-client-components)/users/getRandomUser';
+import { getRandomUser } from '@/fetching/server/getRandomUser';
 import { withServerAuth } from '@/utils/withServerAuth';
 
 // #route segment config

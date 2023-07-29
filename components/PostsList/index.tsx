@@ -1,6 +1,6 @@
 'use client';
 
-import { deletePost, getPosts } from '@/fetching/endpoints/posts';
+import { deletePost, getPosts } from '@/fetching/client/endpoints/posts';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 
 import styles from './styles.module.scss';
