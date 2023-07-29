@@ -5,6 +5,10 @@ export const getPosts = async (): Promise<Post[]> => {
     return await request({ url: '/api/posts' });
 };
 
+export const getCurrentPost = async (id: number): Promise<Post> => {
+    return await request({ url: `/api/posts/${id}` });
+};
+
 type AddPostData = Pick<Post, 'text' | 'name'>;
 
 export const addPost = async (data: AddPostData): Promise<Post[]> => {

@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from 'react-query';
 
 import styles from './styles.module.scss';
 import { Button } from '@/components/Button';
+import Link from 'next/link';
 
 export const PostsList = () => {
     const queryClient = useQueryClient();
@@ -26,9 +27,11 @@ export const PostsList = () => {
                 posts?.map((post) => (
                     <article key={post.id} className={styles.article}>
                         <div>
-                            <header className={styles.header}>
-                                {post.name}{' '}
-                            </header>
+                            <Link href={`/posts/${post.id}`}>
+                                <header className={styles.header}>
+                                    {post.name}{' '}
+                                </header>
+                            </Link>
                             <p>{post.text}</p>
                         </div>
                         <Button

@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-bottom: 35px;
+
+    & * {
+        margin-bottom: 10px;
+    }
+}
+
+.textarea {
+    height: 100px;
+}

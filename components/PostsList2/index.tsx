@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 import { Posts2DeleteButton } from '@/components/Posts2DeleteButton';
-import { Post } from '@/app/api/posts/fakePosts';
+import { Post } from '@prisma/client';
 import { fetch } from 'next/dist/compiled/@edge-runtime/primitives';
 
 interface PostsResponse {
