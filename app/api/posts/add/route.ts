@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth';
-import { postsStore } from '@/app/api/posts/fakePosts';
+import { prisma } from '@/utils/db';
 
 export async function POST(req: Request) {
     try {
@@ -12,19 +12,16 @@ export async function POST(req: Request) {
         const body = await req.json();
 
         if (body) {
-            const newId =
-                postsStore.posts[postsStore.posts.length - 1]?.id + 1 || 0;
-            const newPost = {
-                id: newId,
-                ...body,
-            };
-            const newPosts = [...postsStore.posts, { ...newPost }];
-            postsStore.setPosts(newPosts);
+            const post = await prisma.post.create({
+                data: {
+                    name: body.name,
+                    text: body.text,
+                },
+            });
+            console.log('NEW POST:', post);
         } else {
             return new Response(null, { status: 400 });
         }
-
-        return new Response(JSON.stringify(postsStore.posts));
     } catch (error) {
         console.log(error);
         return new Response(null, { status: 500 });

@@ -1,5 +1,5 @@
 import { request } from '@/fetching/client/request';
-import { Post } from '@/app/api/posts/fakePosts';
+import { Post } from '@prisma/client';
 
 export const getPosts = async (): Promise<Post[]> => {
     return await request({ url: '/api/posts' });
