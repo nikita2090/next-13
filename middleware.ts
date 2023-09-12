@@ -29,7 +29,6 @@ async function middleware(request: NextRequest) {
         const origin = findOriginFromReferer(
             request.headers.get('referer') || ''
         );
-        console.log('origin', origin);
 
         addCORSHeaders(response, origin);
 

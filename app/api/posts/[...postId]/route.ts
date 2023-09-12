@@ -14,7 +14,6 @@ export async function GET(req: Request, { params }: { params: Params }) {
         }
 
         const { postId } = params;
-        console.log('POSTID', postId);
         if (postId) {
             const currentPost = await prisma.post.findUnique({
                 where: {
@@ -32,6 +31,36 @@ export async function GET(req: Request, { params }: { params: Params }) {
     }
 }
 
+export async function PUT(req: Request, { params }: { params: Params }) {
+    try {
+        const session = await getServerSession();
+        if (!session) {
+            return new Response('Unauthorized', { status: 403 });
+        }
+
+        const { postId } = params;
+        if (postId) {
+            const body = await req.json();
+            const updatedPost = await prisma.post.update({
+                where: {
+                    id: Number(postId),
+                },
+                data: {
+                    name: body.name,
+                    text: body.text,
+                },
+            });
+            console.log('UPDATE POST:', updatedPost);
+            return NextResponse.json(updatedPost);
+        } else {
+            return new Response(null, { status: 404 });
+        }
+    } catch (error) {
+        console.log(error);
+        return new Response(null, { status: 500 });
+    }
+}
+
 export async function DELETE(req: Request, { params }: { params: Params }) {
     try {
         const session = await getServerSession();
@@ -39,8 +68,8 @@ export async function DELETE(req: Request, { params }: { params: Params }) {
         if (!session) {
             return new Response('Unauthorized', { status: 403 });
         }
-        const { postId } = params;
 
+        const { postId } = params;
         if (postId) {
             const deletedPost = await prisma.post.delete({
                 where: {

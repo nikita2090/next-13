@@ -8,7 +8,6 @@ interface Props {
 
 export default function PathRevalidator({ queryPath }: Props) {
     const API_KEY = 'super-secure-api-key';
-    console.log(API_KEY);
 
     const handleClick = () => {
         fetch(

@@ -9,15 +9,26 @@ export const getCurrentPost = async (id: number): Promise<Post> => {
     return await request({ url: `/api/posts/${id}` });
 };
 
-type AddPostData = Pick<Post, 'text' | 'name'>;
+type PostData = Pick<Post, 'text' | 'name'>;
 
-export const addPost = async (data: AddPostData): Promise<Post[]> => {
+export const addPost = async (data: PostData): Promise<Post> => {
     return await request({ url: '/api/posts/add', method: 'post', data: data });
 };
 
-export const deletePost = async (id: number): Promise<Post[]> => {
+export const deletePost = async (id: number): Promise<Post> => {
     return await request({
         url: `/api/posts/${id}`,
         method: 'delete',
+    });
+};
+
+export const updatePost = async (data: Post): Promise<Post> => {
+    return await request({
+        url: `/api/posts/${data.id}`,
+        method: 'put',
+        data: {
+            name: data.name,
+            text: data.text,
+        },
     });
 };

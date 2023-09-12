@@ -15,12 +15,15 @@ export default function EditPost({ params: { postId } }: Props) {
     const { data, isLoading } = useQuery('post', () =>
         getCurrentPost(Number(postId))
     );
-    console.log('DATA', data);
 
     return (
         <>
             <h2>Edit post</h2>
-            {isLoading && data ? <div>Loading</div> : <EditForm post={data!} />}
+            {isLoading && data ? (
+                <div>Loading</div>
+            ) : (
+                <EditForm post={data!} postId={Number(postId)} />
+            )}
         </>
     );
 }
