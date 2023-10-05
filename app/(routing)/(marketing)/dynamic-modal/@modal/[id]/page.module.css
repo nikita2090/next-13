@@ -1,0 +1,29 @@
+.root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 100px;
+}
+
+.modal {
+    position: relative;
+    overflow: hidden;
+    min-width: 50vw;
+    min-height: 50dvh;
+    padding: 30px;
+    background-color: white;
+}
+
+.closeBtn {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2%;
+    right: 2%;
+}

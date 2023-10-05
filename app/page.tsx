@@ -29,6 +29,9 @@ export default async function Home() {
             <Link href={'/dashboard'}>Dashboard (Parallel routing)</Link>
             <br />
             <br />
+            <Link href={'/dynamic-modal'}>
+                Dynamic modals with Parallel routing
+            </Link>
 
             {isAuthorized ? (
                 <>
